@@ -11,7 +11,7 @@ from pystyle import Colorate, Colors, Write, Add, Center
  
 def banner():
     print(f'''        
-                    \033[1m\033[38;5;51m TOOLS BY MIKYY OXE
+                   \033[1m\033[38;5;51m TOOLS BY MIKYY OXE
          
 \033[1;37m╭▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬╮''')
 t=(Colorate.Horizontal(Colors.white_to_black,"- - - - - - - - - - - - - - - - - - - - - - - - -"))
@@ -71,16 +71,16 @@ def main_share():
     clear()
     banner()
     print()
-    input_file = open(input(" ─> \033[1m\033[38;5;51m Masukan Cookies Anda , Format ( txt ) : \033[1;37m")).read().split('\n')
-    id_share = input(" ─> \033[1m\033[38;5;51m Masukan ID Link Postingan Anda : \033[1;37m")
-    delay = int(input(" ─> \033[1m\033[38;5;51m Masukan Delay Postingan : \033[1;37m"))
-    total_share = int(input(" ─> \033[1m\033[38;5;51m Masukan Total Share : \033[1;37m"))
+    input_file = open(input(" ─> \033[1m\033[38;5;51m Input Cookie , Format ( txt ) : \033[1;37m")).read().split('\n')
+    id_share = input(" ─> \033[1m\033[38;5;51m ID / URL Link Postingan : \033[1;37m")
+    delay = int(input(" ─> \033[1m\033[38;5;51m Delay Share : \033[1;37m"))
+    total_share = int(input(" ─> \033[1m\033[38;5;51m Jumlah Share : \033[1;37m"))
     print()
-    print('\033[1;31m     [Loading] \x1b[38;2;233;233;233mSabar ya ...', end='\r')
+    print('\033[1;31m     [Loading] \x1b[38;2;233;233;233mSabar Ya ...', end='\r')
     all = get_token(input_file)
     total_live = len(all)
     print(f'\033[1;37m╰▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬╯''')
-    print(f'\033[1;31m                         [ Live : \x1b[38;2;233;233;233m{total_live} \033[1;31mCookies ]')
+    print(f'\033[1;31m                    [ Live : \x1b[38;2;233;233;233m{total_live} \033[1;31mCookies ]')
     if total_live == 0:
         sys.exit()
     print(f'\033[1;37m╭▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬╮''')
