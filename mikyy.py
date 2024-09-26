@@ -90,7 +90,7 @@ def main_share():
             stt = stt + 1
             threa = threading.Thread(target=share, args=(tach, id_share))
             threa.start()
-            print(f'\033[1;37m[\033[1;37m{stt}\033[1;37m]\033[1;37m STATUS \033[1;37m|\033[1m\033[38;5;51m BERHASIL \033[1;37m|ID|\033[1;37m\033[1;93m {id_share} \033[1;37m|\n', end='\r')
+            print(f'\033[1;37m[\033[1;37m{stt}\033[1;37m]\033[1;37m STATUS \033[1;37m|\033[1m\033[38;5;51m BERHASIL \033[1;37m|ID / URL|\033[1;37m\033[1;93m {id_share} \033[1;37m|\n', end='\r')
             time.sleep(delay)
         if stt == total_share:
             break
