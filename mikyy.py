@@ -1,14 +1,26 @@
 import sys
 import os
+os.system('cls')
 import requests
 import threading
 import time
-
+import json,requests,time
+from time import strftime
+from tqdm import tqdm
+from pystyle import Colorate, Colors, Write, Add, Center
+ 
+def banner():
+    print(f'''        
+                         \033[1m\033[38;5;51m TOOLS BY MIKYY OXE
+         
+\033[1;37m╭▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬╮''')
+t=(Colorate.Horizontal(Colors.white_to_black,"- - - - - - - - - - - - - - - - - - - - - - - - -"))
+print(t)
 def clear():
     if(sys.platform.startswith('win')):
         os.system('cls')
     else:
-        os.system('clear')
+        os.system('cls')
 gome_token = []
 def get_token(input_file):
     for cookie in input_file:
@@ -57,33 +69,38 @@ def share(tach, id_share):
     
 def main_share():
     clear()
-    input_file = open(input("\033[1;31mMasukan Cookie Anda , Format ( txt ) : \x1b[38;2;233;233;233m")).read().split('\n')
-    id_share = input("\033[1;31mMasukan ID Link Postingan Anda : \x1b[38;2;233;233;233m")
-    total_share = int(input("\033[1;31mMasukan Total Share : : \x1b[38;2;233;233;233m"))
-    delay = int(input("\033[1;31mMasukan Delay Postingan : \x1b[38;2;233;233;233m"))
-    print('\x1b[38;2;0;255;255m════════════════════════════════════\x1b[38;2;233;233;233m')
-    print('\033[1;31m[*] \x1b[38;2;233;233;233mLoading...', end='\r')
+    banner()
+    print()
+    input_file = open(input(" ─> \033[1m\033[38;5;51m Masukan Cookies Anda , Format ( txt ) : \033[1;37m")).read().split('\n')
+    id_share = input(" ─> \033[1m\033[38;5;51m Masukan ID Link Postingan Anda : \033[1;37m")
+    delay = int(input(" ─> \033[1m\033[38;5;51m Masukan Delay Postingan : \033[1;37m"))
+    total_share = int(input(" ─> \033[1m\033[38;5;51m Masukan Total Share : \033[1;37m"))
+    print()
+    print('\033[1;31m     [Loading] \x1b[38;2;233;233;233mSabar ya ...', end='\r')
     all = get_token(input_file)
     total_live = len(all)
-    print(f'\033[1;31mLive: \x1b[38;2;233;233;233m{total_live} \033[1;31mCookies')
+    print(f'\033[1;37m╰▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬╯''')
+    print(f'\033[1;31m                         [ Live : \x1b[38;2;233;233;233m{total_live} \033[1;31mCookies ]')
     if total_live == 0:
         sys.exit()
-    print('\x1b[38;2;0;255;255m════════════════════════════════════\x1b[38;2;233;233;233m')
+    print(f'\033[1;37m╭▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬╮''')
     stt = 0
     while True:
         for tach in all:
             stt = stt + 1
             threa = threading.Thread(target=share, args=(tach, id_share))
             threa.start()
-            print(f'\033[1;31mShare: + \x1b[38;2;233;233;233m{stt}', end='\r')
+            print(f'             \033[1;37m[\033[1;37m{stt}\033[1;37m]\033[1;37m STATUS \033[1;37m|\033[1m\033[38;5;51m BERHASIL \033[1;37m|ID|\033[1;37m\033[1;93m {id_share} \033[1;37m|\n', end='\r')
             time.sleep(delay)
-        if stt > total_share:
+        if stt == total_share:
             break
     gome_token.clear()
-    input('\033[1;31m[*] \x1b[38;2;0;255;255mPostingan Berhasil Di Bagikan\033[0m')
+    print(f'\033[1;37m╰▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬╯''')
+    print()   
+    input('  \033[1;37m[\033[1;31m SUKSES \033[1;37m] \033[1;37m Postingan Berhasil Di Bagikan | Tekan [\033[1m\033[38;5;51m Enter \033[1;37m] Ulangi \033[0m\033[0m')
 while True:
     try:
         main_share()
     except KeyboardInterrupt:
-        print('\033[1;31m[*] \x1b[38;2;0;255;255mTerimakasih...\033[0m')
+        print('\n\033[38;5;245m[\033[38;5;9m!\033[38;5;245m] \033[38;5;9m Terimakasih \033[0m')
         sys.exit()
