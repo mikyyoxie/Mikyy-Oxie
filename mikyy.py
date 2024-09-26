@@ -18,9 +18,9 @@ t=(Colorate.Horizontal(Colors.white_to_black,"- - - - - - - - - - - - - - - - - 
 print(t)
 def clear():
     if(sys.platform.startswith('win')):
-        os.system('cls')
+        os.system('clear')
     else:
-        os.system('cls')
+        os.system('clear')
 gome_token = []
 def get_token(input_file):
     for cookie in input_file:
