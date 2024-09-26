@@ -80,7 +80,7 @@ def main_share():
     all = get_token(input_file)
     total_live = len(all)
     print(f'\033[1;37m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬''')
-    print(f'\033[1;31m    [ Live : \x1b[38;2;233;233;233m{total_live} \033[1;31mCookies ]')
+    print(f'\033[1;31m      [ Live : \x1b[38;2;233;233;233m{total_live} \033[1;31mCookies ]')
     if total_live == 0:
         sys.exit()
     print(f'\033[1;37m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬''')
