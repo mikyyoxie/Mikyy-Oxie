@@ -1,6 +1,6 @@
 import sys
 import os
-os.system('cls')
+os.system('clear')
 import requests
 import threading
 import time
